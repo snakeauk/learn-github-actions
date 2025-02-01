@@ -10,14 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: update apt-get
-      run: sudo apt-get update
-
     - name: install-build-essential
-      run: 
+      run: sudo apt-get install build-essential -y
 
     - name: checkout
-      uses:
+      uses: actions/checkout@v4
 
     - name: build
-      run:
+      run: make run
